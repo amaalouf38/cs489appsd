@@ -3,7 +3,7 @@ package edu.miu.cs489.tsogt.lab_6.service.impl;
 import edu.miu.cs489.tsogt.lab_6.model.Patient;
 import edu.miu.cs489.tsogt.lab_6.repository.PatientRepository;
 import edu.miu.cs489.tsogt.lab_6.service.PatientService;
-import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +14,10 @@ public class PatientServiceImpl implements PatientService {
 
     private PatientRepository patientRepository;
 
+    @Autowired
     public PatientServiceImpl(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
-
 
     @Override
     public List<Patient> getPatients() {
@@ -25,7 +25,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient getPatient(String id) {
+    public Patient getPatient(Integer id) {
         return patientRepository.findById(id).orElse(null);
     }
 

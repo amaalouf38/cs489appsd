@@ -15,14 +15,13 @@ public class DentistServiceImpl implements DentistService {
         this.dentistRepository = dentistRepository;
     }
 
-
     @Override
     public List<Dentist> getDentists() {
         return dentistRepository.findAll();
     }
 
     @Override
-    public Dentist getDentistById(int id) {
+    public Dentist getDentistById(Integer id) {
         return dentistRepository.findById(id).orElse(null);
     }
 

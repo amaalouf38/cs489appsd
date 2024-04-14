@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface SurgeryService {
     List<Surgery> findAll();
-    Surgery findById(String id);
+
+    Surgery findById(Integer id);
+
     Surgery save(Surgery surgery);
+
     void delete(Surgery surgery);
 }
